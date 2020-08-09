@@ -13,7 +13,7 @@ after_success:
   - docker build -t olajide/multi-nginx ./nginx
   - docker build -t olajide/multi-server ./server
   - docker build -t olajide/multi-worker ./worker
-  - echo "$DOCKER_PASSWORD" |  docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push olajide/multi-client
   - docker push olajide/multi-nginx
   - docker push olajide/multi-server
