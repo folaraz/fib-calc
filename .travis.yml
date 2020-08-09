@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true olajide/fib-ui-test npm test -- --coverage
 
 after_success:
-  - docker build -t olajide/multi-client ./client
-  - docker build -t olajide/multi-nginx ./nginx
-  - docker build -t olajide/multi-server ./server
-  - docker build -t olajide/multi-worker ./worker
+  - docker build -t folaraz/multi-client ./client
+  - docker build -t folaraz/multi-nginx ./nginx
+  - docker build -t folaraz/multi-server ./server
+  - docker build -t folaraz/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push olajide/multi-client
-  - docker push olajide/multi-nginx
-  - docker push olajide/multi-server
-  - docker push olajide/multi-worker
+  - docker push folaraz/multi-client
+  - docker push folaraz/multi-nginx
+  - docker push folaraz/multi-server
+  - docker push folaraz/multi-worker
